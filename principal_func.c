@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * f_file - any
+ * @file: name of the file
+ *
+ */
+
 void f_func(char *file)
 {
     FILE * fpointer;
@@ -15,5 +21,4 @@ void f_func(char *file)
 		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
 	}
-
 }
