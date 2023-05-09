@@ -27,3 +27,14 @@ void push(stack_t **stack, unsigned int line_number)
 
 	*stack = new_node;
 }
+void free_stack(stack_t *head)
+{
+	stack_t *stack;
+
+	while (head)
+	{
+		stack = head->next;
+		free(head);
+		head = stack;
+	}
+}

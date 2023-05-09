@@ -35,4 +35,7 @@ void f_func(char *file)
 		opcode_func(&head, line_number);
 		line_number++;
 	}
+	free(buffer);
+	free_stack(head);
+	fclose(fpointer);
 }

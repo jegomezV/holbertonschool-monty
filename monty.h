@@ -45,8 +45,9 @@ typedef struct instruction_s
 /*Prototypes*/
 void f_func(char *file);
 void (*check_opcodes(void))(stack_t **, unsigned int);
+void free_stack(stack_t *head);
 
-/* handle functions */
+/* node functions */
 void push(stack_t **stack, unsigned int line_number);
 /* print functions */
 void pall(stack_t **stack, unsigned int line_number);
