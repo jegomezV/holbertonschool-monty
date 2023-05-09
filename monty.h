@@ -10,6 +10,7 @@ extern char *buffer;
 #include <unistd.h>
 #include <sys/types.h>
 #include <fcntl.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
