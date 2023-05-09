@@ -8,6 +8,8 @@ char *buffer;
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <fcntl.h>
 
 /*Holberton base*/
 /**
@@ -42,5 +44,6 @@ typedef struct instruction_s
 
 /*Prototypes*/
 void f_func(char *file);
+void (*check_opcodes(void))(stack_t **, unsigned int);
 
 #endif

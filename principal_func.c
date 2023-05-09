@@ -28,7 +28,7 @@ void f_func(char *file)
 		opcode_func = check_opcodes();
 		if (opcode_func == NULL)
 		{
-			dprintf(STDERR_FILENO, "L%i: unknown instruction %s", line_number, buff);
+			dprintf(STDERR_FILENO, "L%i: unknown instruction %s", line_number, buffer);
 			exit(EXIT_FAILURE);
 		}
 		opcode_func(&head, line_number);
