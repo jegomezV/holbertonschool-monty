@@ -1,6 +1,9 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+/*Global vars*/
+char *buffer;
+
 /*Libraries*/
 #include <stdio.h>
 #include <stdlib.h>
