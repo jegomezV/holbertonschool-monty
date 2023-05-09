@@ -2,7 +2,7 @@
 #define MONTY_H
 
 /*Global vars*/
-extern char *buffer;
+char *buffer;
 
 /*Libraries*/
 #include <stdio.h>
@@ -48,13 +48,7 @@ void (*check_opcodes(void))(stack_t **, unsigned int);
 
 /* handle functions */
 void push(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack, unsigned int line_number);
-
 /* print functions */
 void pall(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
 
 #endif

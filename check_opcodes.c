@@ -7,17 +7,12 @@
 
 void (*check_opcodes(void))(stack_t **, unsigned int)
 {
-	int i = 0, j;
+	int i = 0, j = 0;
 	int valid_opcode;
 	int len_opcode;
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"nop", nop},
 		{NULL, NULL}
 	};
 /* We valid the opcode */
