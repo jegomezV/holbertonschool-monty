@@ -13,7 +13,7 @@ void (*check_opcodes(void))(stack_t **, unsigned int)
 
 	instruction_t opcodes[] = {
 		{"push", push},
-		{"pall$", pall},
+		{"pall", pall},
 		{NULL, NULL}
 	};
 	/* We valid the opcode */
