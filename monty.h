@@ -1,9 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-/*Global vars*/
-char *buff;
-
 /*Libraries*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,6 +38,6 @@ typedef struct instruction_s
 } instruction_t;
 
 /*Prototypes*/
-void f_file(char *file);
+void f_func(char *file);
 
 #endif
