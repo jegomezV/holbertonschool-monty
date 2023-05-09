@@ -6,6 +6,7 @@ char *buff;
 
 /*Libraries*/
 #include <stdio.h>
+#include <stdlib.h>
 
 /*Holberton base*/
 /**
