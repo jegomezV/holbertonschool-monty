@@ -2,7 +2,7 @@
 #define MONTY_H
 
 /*Global vars*/
-char *buffer;
+extern char *buffer;
 
 /*Libraries*/
 #include <stdio.h>
@@ -11,7 +11,6 @@ char *buffer;
 #include <sys/types.h>
 #include <fcntl.h>
 
-/*Holberton base*/
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer

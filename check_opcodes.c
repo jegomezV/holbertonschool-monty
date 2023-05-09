@@ -7,7 +7,6 @@
 
 void (*check_opcodes(void))(stack_t **, unsigned int)
 {
-
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
