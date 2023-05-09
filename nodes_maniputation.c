@@ -27,6 +27,12 @@ void push(stack_t **stack, unsigned int line_number)
 
 	*stack = new_node;
 }
+
+/**
+ * free_stack - frees the stack
+ * @head: pointer to the head of the stack
+ */
+
 void free_stack(stack_t *head)
 {
 	stack_t *stack;
