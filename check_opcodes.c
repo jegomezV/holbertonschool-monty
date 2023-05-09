@@ -18,3 +18,4 @@ void (*check_opcodes(void))(stack_t **, unsigned int)
 		{"nop", nop},
 		{NULL, NULL}
 	};
+}
