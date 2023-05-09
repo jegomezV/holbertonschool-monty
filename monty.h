@@ -7,6 +7,7 @@ char *buff;
 /*Libraries*/
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /*Holberton base*/
 /**
@@ -40,5 +41,6 @@ typedef struct instruction_s
 } instruction_t;
 
 /*Prototypes*/
+void f_file(char *file);
 
 #endif
