@@ -50,6 +50,11 @@ void _pall(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * _pint - print the last element of the stack
+ * @stack: double pointer to the head of stack
+ * @line_number: number of the line in case of error
+ */
 void _pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
@@ -58,4 +63,22 @@ void _pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
+}
+
+/**
+ * _pop - Removes the top element in stack
+ * @stack: pointer to the head of the stack
+ * @line_number: number of the line in case of error
+ */
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	stack_t *temp = *stack;
+	*stack = (*stack)->next;
+	free(temp);
 }
