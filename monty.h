@@ -48,7 +48,7 @@ int main(int argc, char **argv);
 
 /*                   Process Functions                   */
 
-void _check(char *op, stack_t **stack, unsigned int line_number);
+void check_opcode(char *op, stack_t **stack, unsigned int line_number);
 void free_all(stack_t *stack, FILE *fd);
 
 /*                   Monty Functions                   */
