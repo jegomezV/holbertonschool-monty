@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _check - check what function to pick according to input
+ * check_opcode - check what function to pick according to input
  * @op: opcode file to run on
  * @stack: double pointer to head of stack
  * @line_number: line number of file we process
