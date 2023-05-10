@@ -13,6 +13,7 @@ void check_opcode(char *op, stack_t **stack, unsigned int line_number)
 	instruction_t check_op[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 
