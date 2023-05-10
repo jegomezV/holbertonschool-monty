@@ -7,11 +7,11 @@ char *buffer;
 /*Libraries*/
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <sys/types.h>
-#include <fcntl.h>
-#include <string.h>
 #include <sys/stat.h>
+#include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -46,11 +46,15 @@ typedef struct instruction_s
 /*Prototypes*/
 void f_func(char *file);
 void (*check_opcodes(void))(stack_t **, unsigned int);
-void free_stack(stack_t *head);
 
 /* node functions */
 void push(stack_t **stack, unsigned int line_number);
 /* print functions */
 void pall(stack_t **stack, unsigned int line_number);
+
+int _atoi(char *str, unsigned int line_number);
+char **_split(char *str, char *sep);
+void *_calloc(unsigned int nmemb, unsigned int size);
+void free_stack(stack_t *head);
 
 #endif

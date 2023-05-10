@@ -8,39 +8,28 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node = malloc(sizeof(stack_t));
+	char **split_buff;
+	int num;
+	stack_t *new;
 
-	if (new_node == NULL)
+	new = malloc(sizeof(stack_t));
+	if (!new)
 	{
+		free(new);
 		dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 
-	new_node->n = line_number;
-	new_node->prev = NULL;
-	new_node->next = *stack;
+	split_buff = _split(buffer, " ");
 
-	if (*stack != NULL)
-	{
-		(*stack)->prev = new_node;
-	}
+	num = _atoi(split_buff[1], line_number);
 
-	*stack = new_node;
-}
+	new->n = num;
+	new->prev = NULL;
+	new->next = *stack;
 
-/**
- * free_stack - frees the stack
- * @head: pointer to the head of the stack
- */
-
-void free_stack(stack_t *head)
-{
-	stack_t *stack;
-
-	while (head)
-	{
-		stack = head->next;
-		free(head);
-		head = stack;
-	}
+	if (*stack)
+		(*stack)->prev = new;
+	*stack = new;
+	free(split_buff);
 }
