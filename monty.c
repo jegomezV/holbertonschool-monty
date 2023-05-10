@@ -1,18 +1,19 @@
 #include "monty.h"
+
 /**
- * main - interpreter for Monty ByteCodes files.
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: 0 on success, 1 on error
+ * main - function main
+ * @argc: variable int
+ * @argv: variable char
+ * Return: int
  */
+
 int main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n");
+		dprintf(STDERR_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	f_func(argv[1]);
+	f_funct(argv[1]);
 	return (0);
 }

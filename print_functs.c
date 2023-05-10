@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * pall - prints all nodes
  * @stack: nodes

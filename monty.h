@@ -1,17 +1,21 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-/*Global vars*/
-char *buffer;
+/* LIBRARIES */
 
-/*Libraries*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <string.h>
+
+/* GLOBAL VARS */
+
+char *buffer;
+
+/* STRUCTURES */
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -22,6 +26,7 @@ char *buffer;
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct stack_s
 {
 	int n;
@@ -40,21 +45,25 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int);
 } instruction_t;
 
-/*Prototypes*/
-void f_func(char *file);
+/* PROTOTYPES */
+
+/* main functions */
+void f_funct(char *file);
 void (*check_opcodes(void))(stack_t **, unsigned int);
 
-/* node functions */
+/* more functions*/
+void *_calloc(unsigned int nmemb, unsigned int size);
+char **_split(char *str, char *sep);
+int _atoi(char *str, unsigned int line_number);
+void free_stack(stack_t *head);
+
+/* nodes functions */
 void push(stack_t **stack, unsigned int line_number);
+
 /* print functions */
 void pall(stack_t **stack, unsigned int line_number);
-
-int _atoi(char *str, unsigned int line_number);
-char **_split(char *str, char *sep);
-void *_calloc(unsigned int nmemb, unsigned int size);
-void free_stack(stack_t *head);
 
 #endif

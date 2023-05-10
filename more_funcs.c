@@ -86,6 +86,7 @@ char **_split(char *str, char *sep)
 	}
 	return (split_str);
 }
+
 /**
  * free_stack - frees a list
  * @head: struct

@@ -1,20 +1,20 @@
 #include "monty.h"
 
 /**
- * f_func - function principal
- * @file: pointer to the file name
+ * handle - program handle function :D
+ * @file: variable char
  */
 
-void f_func(char *file)
+void f_funct(char *file)
 {
-	FILE *fpointer;
+	FILE *fd;
 	size_t read_size = 0;
 	void (*opcode_func)(stack_t **, unsigned int);
 	int line_number = 1;
 	stack_t *head;
 
-	fpointer = fopen(file, "r+");
-	if (!fpointer)
+	fd = fopen(file, "r+");
+	if (!fd)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
@@ -22,13 +22,12 @@ void f_func(char *file)
 
 	head = NULL;
 
-	while (getline(&buffer, &read_size, fpointer) != -1)
+	while (getline(&buffer, &read_size, fd) != -1)
 	{
 		opcode_func = check_opcodes();
 		if (opcode_func == NULL)
 		{
-			dprintf(STDERR_FILENO, "L%i: unknown instruction %s",
-				line_number, buffer);
+			dprintf(STDERR_FILENO, "L%i: unknown instruction %s", line_number, buffer);
 			exit(EXIT_FAILURE);
 		}
 		opcode_func(&head, line_number);
@@ -36,5 +35,5 @@ void f_func(char *file)
 	}
 	free(buffer);
 	free_stack(head);
-	fclose(fpointer);
+	fclose(fd);
 }
